@@ -1,0 +1,224 @@
+#####################################################################
+# These are some sample modes for the Codex app.                    # 
+# Each mode consists of a snippet of code with some CODEX settings. #
+#####################################################################
+
+######################################
+# An app to show Google Stock prices #
+######################################
+
+[modes.google_stock]
+
+title = "💸 Google Stocks App"
+
+input_code = """
+# An app to show Google stocks. 
+
+\"\"\"
+App which shows price for Google Stock from 09/11/2019 to 09/15/2021
+\"\"\"
+
+import streamlit as st
+import yfinance as yf
+"""
+
+codex_args.temperature=0.0
+codex_args.max_tokens=500
+codex_args.frequency_penalty=0.0
+codex_args.presence_penalty=0
+codex_args.best_of=2
+
+
+# Uncommment to get an an "execute" button
+output_controls.execute_button = "🎈 Execute Code"
+
+
+#######################################
+# An app to interactively blur images #
+#######################################
+
+[modes.blur_image]
+
+title = "🙈 Blur Image"
+
+input_code = """
+\"\"\"
+1. Ask the user to upload an image.
+2. Blur that image with a Guassian blur
+\"\"\"
+
+import streamlit as st
+from PIL import Image, ImageFilter
+"""
+
+codex_args.temperature=0.0
+codex_args.max_tokens=500
+codex_args.frequency_penalty=0.0
+codex_args.presence_penalty=0
+codex_args.best_of=2
+
+# Uncommment to get an an "execute" button
+output_controls.execute_button = "🎈 Execute Code"
+
+
+###############################################
+# An app to generate firstname-lastname pairs #
+###############################################
+
+[modes.name_generator]
+
+title = "👶 Name Generator app"
+
+input_code = """
+\"\"\"
+1. Create and display a list of first names in Streamlit
+2. Create and display a list of last names in Streamlit
+3. Combine them randomly into a list of 10 full names in Streamlit
+4. plot the first names' length and last names' length in 2 plotly bar charts.
+\"\"\"
+"""
+
+codex_args.temperature=0.0
+codex_args.max_tokens=1000
+codex_args.frequency_penalty=0.0
+codex_args.presence_penalty=0
+codex_args.best_of=2
+
+# Uncommment to get an an "execute" button
+output_controls.execute_button = "🎈 Execute Code"
+
+
+#########################################
+# An app to generate Python docstrings. #
+#########################################
+
+[modes.docstring_generator]
+
+title = "💎 Python docstring generator"
+
+input_code = """
+\"\"\"
+# Python 3.8
+ 
+def randomly_split_dataset(folder, filename, split_ratio=[0.8, 0.2]):
+    df = pd.read_json(folder + filename, lines=True)
+    train_name, test_name = "train.jsonl", "test.jsonl"
+    df_train, df_test = train_test_split(df, test_size=split_ratio[1], random_state=42)
+    df_train.to_json(folder + train_name, orient='records', lines=True)
+    df_test.to_json(folder + test_name, orient='records', lines=True)
+randomly_split_dataset('finetune_data/', 'dataset.jsonl')
+    
+# An elaborate, high quality Python docstring generator for the above function:
+
+\"\"\"
+"""
+
+codex_args.temperature=0.0
+codex_args.max_tokens=150
+codex_args.frequency_penalty=0.0
+codex_args.presence_penalty=0
+codex_args.stop=["#", '"""']
+codex_args.best_of=2
+
+# Uncommment to get a download button
+output_controls.download_button = "📥 Download Python docstring"
+
+
+###########################################
+# An app to convert javacript into Python #
+###########################################
+
+[modes.javascript_to_python]
+title = "☕️ JavaScript to Python"
+
+input_code = """
+\"\"\"
+
+#JavaScript to Python:
+JavaScript: 
+dogs = ["bill", "joe", "carl"]
+car = []
+dogs.forEach((dog) {
+    car.push(dog);
+});
+
+Python:
+
+\"\"\"
+"""
+
+codex_args.temperature=0.0
+codex_args.max_tokens=64
+codex_args.frequency_penalty=0.0
+codex_args.presence_penalty=0
+codex_args.stop=["#"]
+
+# Uncommment to get a download button
+output_controls.download_button = "📥 Download JavaScript to Python"
+
+
+###########################################
+# An app to fix a bug in some Python code # 
+###########################################
+
+[modes.fix_bugs]
+
+title = "🐛 Fix bugs in Python"
+
+input_code = """
+\"\"\"
+
+##### Fix bugs in the below function
+
+### Buggy Python
+import Random
+a = random.randint(1,12)
+b = random.randint(1,12)
+for i in range(10):
+    question = "What is "+a+" x "+b+"? "
+    answer = input(question)
+    if answer = a*b
+        print (Well done!)
+    else:
+        print("No.")
+    
+### Fixed Python
+
+\"\"\"
+"""
+
+codex_args.temperature=0.0
+codex_args.max_tokens=182
+codex_args.frequency_penalty=0.0
+codex_args.presence_penalty=0
+codex_args.stop=["###", "#"]
+
+# Uncommment to get a download button
+output_controls.download_button = "📥 Download fixed Python code "
+
+
+########################################
+# An app let you do whatever you want. #
+########################################
+
+[modes.blank]
+
+title = "🤷 Blank"
+
+input_code = """
+\"\"\"
+\"\"\"
+
+import streamlit as st
+"""
+
+codex_args.temperature=0.5
+codex_args.max_tokens=500
+codex_args.frequency_penalty=0.05
+codex_args.presence_penalty=0
+codex_args.best_of=2
+
+
+# Uncommment to get an an "execute" button
+output_controls.execute_button = "🎈 Execute Code"
+

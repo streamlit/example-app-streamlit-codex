@@ -1,0 +1,58 @@
+[ codex_params.max_tokens ]
+
+input_type = "slider"
+default_value = 16
+
+input_params.min_value = 16
+input_params.max_value = 1000
+input_params.help = "The maximum number of tokens to generate in the completion."
+
+
+[ codex_params.temperature ]
+
+input_type = "slider"
+default_value = 1.0
+
+input_params.min_value = 0.0
+input_params.max_value = 1.0
+input_params.help = "Higher values means the model will take more risks."
+
+
+[ codex_params.frequency_penalty ]
+
+input_type = "slider"
+default_value = 0.0
+
+input_params.min_value = -2.0
+input_params.max_value = 2.0
+input_params.help = "Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim."
+
+
+[ codex_params.presence_penalty ]
+
+input_type = "slider"
+default_value = 0.0
+
+input_params.min_value = -2.0
+input_params.max_value = 2.0
+input_params.help = "Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics."
+
+
+[ codex_params.stop ]
+
+input_type = "multiselect"
+default_value = []
+
+input_params.options = ['#', '###', '"""']
+input_params.help = "Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence."
+
+
+[ codex_params.best_of ]
+
+input_type = "number_input"
+default_value = 1
+
+input_params.min_value = 1
+input_params.max_value = 5 
+input_params.help = 'Generates best_of completions server-side and returns the "best" (the one with the lowest log probability per token).'
+
