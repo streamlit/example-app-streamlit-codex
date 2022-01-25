@@ -1,5 +1,5 @@
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/charlywargnier/streamlit-and-codex/main/)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/streamlit/example-app-streamlit-codex/main)
 
 <img src="https://user-images.githubusercontent.com/27242399/150765835-8694a961-161e-4f97-bb29-cbc1fce426cb.png" width="500"/>
 
