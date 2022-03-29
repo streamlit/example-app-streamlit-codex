@@ -2,3 +2,4 @@ streamlit
 openai
 yfinance
 plotly
+click==8
